@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Testact | Apple-Style Deployment</title>
-  <!-- Inter font (fallback for non-Apple systems) -->
+  <title>Nexus | Future of Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* === TYPOGRAPHY SYSTEM (from DESIGN.md) === */
+    /* === COLORS (from DESIGN.md) === */
     :root {
-      /* Colors */
       --primary: #0066cc;
       --primary-focus: #0071e3;
       --primary-on-dark: #2997ff;
       --ink: #1d1d1f;
       --body: #1d1d1f;
       --body-on-dark: #ffffff;
-      --body-muted: #cccccc;
-      --ink-muted-80: #333333;
       --canvas: #ffffff;
       --canvas-parchment: #f5f5f7;
       --surface-tile-1: #272729;
@@ -28,7 +24,7 @@
       --surface-tile-3: #252527;
       --surface-black: #000000;
 
-      /* Typography fallback: Inter mimics SF Pro */
+      /* Typography */
       --font-display: 'SF Pro Display', 'Inter', system-ui, -apple-system, sans-serif;
       --font-text: 'SF Pro Text', 'Inter', system-ui, -apple-system, sans-serif;
 
@@ -54,42 +50,25 @@
       background-color: var(--canvas);
     }
 
-    /* Hero tile — light */
-    .tile.hero {
-      background-color: var(--canvas);
+    .tile {
       padding: var(--section) 0;
       text-align: center;
     }
 
-    .tile.hero h1 {
-      font-family: var(--font-display);
-      font-size: 40px;
-      font-weight: 600;
-      line-height: 1.1;
-      letter-spacing: -0.28px;
-      margin-bottom: 16px;
-      color: var(--ink);
+    .tile.light {
+      background-color: var(--canvas);
     }
 
-    .tile.hero p {
-      font-size: 28px;
-      font-weight: 400;
-      line-height: 1.14;
-      letter-spacing: 0.196px;
-      max-width: 600px;
-      margin: 0 auto;
-      color: var(--ink);
+    .tile.parchment {
+      background-color: var(--canvas-parchment);
     }
 
-    /* Dark tile */
     .tile.dark {
       background-color: var(--surface-tile-1);
       color: var(--body-on-dark);
-      padding: var(--section) 0;
-      text-align: center;
     }
 
-    .tile.dark h1 {
+    .headline {
       font-family: var(--font-display);
       font-size: 40px;
       font-weight: 600;
@@ -98,7 +77,7 @@
       margin-bottom: 16px;
     }
 
-    .tile.dark p {
+    .subhead {
       font-size: 28px;
       font-weight: 400;
       line-height: 1.14;
@@ -107,7 +86,6 @@
       margin: 0 auto;
     }
 
-    /* Button: Apple-style pill */
     .btn {
       display: inline-block;
       padding: 11px 22px;
@@ -136,20 +114,6 @@
       transform: scale(0.95);
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--primary);
-      border: 1px solid var(--primary);
-    }
-
-    /* Layout */
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Product image placeholder (simulasi "photography-first") */
     .product-img {
       width: 100%;
       max-width: 500px;
@@ -157,77 +121,68 @@
       background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
       margin: 40px auto;
       border-radius: 0;
-      box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0; /* satu-satunya shadow! */
+      box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0;
     }
 
-    /* Responsive */
     @media (max-width: 640px) {
-      .tile.hero h1,
-      .tile.dark h1 {
-        font-size: 34px;
-      }
-      .tile.hero p,
-      .tile.dark p {
-        font-size: 24px;
-      }
-      .product-img {
-        height: 240px;
-      }
+      .headline { font-size: 34px; }
+      .subhead { font-size: 24px; }
+      .product-img { height: 240px; }
     }
   </style>
 </head>
 <body>
 
   <!-- Tile 1: Light -->
-  <div class="tile hero">
-    <div class="container">
-      <h1>Testact</h1>
-      <p>A photography-first deployment test — clean, quiet, and confident.</p>
+  <div class="tile light">
+    <div class="container" style="max-width:980px; margin:0 auto; padding:0 24px;">
+      <h1 class="headline">Nexus</h1>
+      <p class="subhead">Where intelligence meets intention — building the next layer of human-machine harmony.</p>
       <div style="margin-top: 32px;">
-        <a href="#" class="btn btn-primary">Learn more</a>
-        <a href="#" class="btn btn-secondary" style="margin-left: 16px;">Buy</a>
+        <a href="#" class="btn btn-primary">Explore</a>
+        <a href="#" class="btn btn-secondary" style="margin-left: 16px;">Learn</a>
       </div>
-      <div class="product-img" aria-label="Product render placeholder"></div>
+      <div class="product-img" aria-label="AI neural interface visualization"></div>
     </div>
   </div>
 
   <!-- Tile 2: Dark -->
   <div class="tile dark">
-    <div class="container">
-      <h1>Designed for Clarity</h1>
-      <p>No decorative gradients. No shadows on UI. Just the product — and one signature blue.</p>
+    <div class="container" style="max-width:980px; margin:0 auto; padding:0 24px;">
+      <h1 class="headline">Quantum Foundations</h1>
+      <p class="subhead">Stable qubits. Error-corrected coherence. A new computational substrate — not faster, but fundamentally different.</p>
       <div style="margin-top: 32px;">
-        <a href="#" class="btn btn-primary">Explore</a>
+        <a href="#" class="btn btn-primary">Research</a>
       </div>
     </div>
   </div>
 
-  <!-- Tile 3: Light (parchment) -->
-  <div class="tile hero" style="background-color: var(--canvas-parchment);">
-    <div class="container">
-      <h1>Deployed with Vercel</h1>
-      <p>Instant global CDN. Zero config. Full Apple-inspired aesthetics.</p>
+  <!-- Tile 3: Parchment -->
+  <div class="tile parchment">
+    <div class="container" style="max-width:980px; margin:0 auto; padding:0 24px;">
+      <h1 class="headline">Sustainable Code</h1>
+      <p class="subhead">Energy-efficient architectures. Carbon-aware deployments. Technology that scales without costing the planet.</p>
       <div style="margin-top: 32px;">
-        <a href="#" class="btn btn-primary">View Source</a>
+        <a href="#" class="btn btn-primary">Initiatives</a>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer style="
-    background-color: var(--canvas-parchment);
-    padding: 64px 0;
-    text-align: center;
-    font-size: 12px;
-    line-height: 1.0;
-    letter-spacing: -0.12px;
-    color: var(--ink-muted-80);
-  ">
-    <p>Made with ❤️ • Inspired by Apple’s design language • Deployed via Vercel</p>
-    <p style="margin-top: 8px;">
-      <a href="https://github.com/Oxrumora/Testact" style="color:var(--primary); text-decoration:underline;">GitHub Repo</a>
-    </p>
-  </footer>
+  <!-- Tile 4: Dark (final) -->
+  <div class="tile dark">
+    <div class="container" style="max-width:980px; margin:0 auto; padding:0 24px;">
+      <h1 class="headline">The Quiet Revolution</h1>
+      <p class="subhead">No hype. No noise. Just thoughtful engineering — where every pixel, byte, and interaction serves a purpose.</p>
+      <div style="margin-top: 32px;">
+        <a href="#" class="btn btn-primary">Join the Future</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ❌ NO FOOTER — page ends cleanly here -->
+  <!-- Space to ensure last tile isn’t cut off on mobile:
+       Vercel auto-adds ~20px bottom margin, but we add explicit padding for safety -->
+  <div style="height: var(--section);"></div>
 
 </body>
 </html>
