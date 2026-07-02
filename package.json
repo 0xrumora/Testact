@@ -7,3 +7,6 @@
     "build": "echo 'Build not required for static site'"
   }
 }
+"scripts": {
+  "build": "mkdir -p public && cp index.html public/"
+}
